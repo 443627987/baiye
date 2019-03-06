@@ -1,0 +1,144 @@
+<html>
+    <body>
+        <button onclick="cleardata()">Clear</button>
+        <br />  
+        
+        Button size:  <button onclick="givesize(60)">Small</button>
+        <button onclick="givesize(90)">Medium</button>
+        <button onclick="givesize(150)">Large</button>
+        <button onclick="givesize(300)">Extra large</button>
+        <br />
+        
+        <button onclick="gettime1()">Start</button>
+        <div id="yourDivId">
+            <button style="height:60px;width:60px" id="redbutton" onclick="gettime2();getElementById(number).innerHTML=diff;addcount()">click me</button>
+        </div>
+        
+        
+        <br />
+        
+        <table border="1">
+            <tr>
+                
+                <td>time(Second)</td>
+            </tr>
+
+            <tr>
+                    
+                <td><p id="1">0</p></td>
+            </tr>
+
+            <tr>
+                    
+                <td><p id="2">0</p></td>
+            </tr>
+
+            <tr>
+                    
+                <td><p id="3">0</p></td>
+            </tr>
+
+            <tr>
+                    
+                <td><p id="4">0</p></td>
+            </tr>
+
+            <tr>
+                    
+                <td><p id="5">0</p></td>
+            </tr>
+            <tr>
+                    
+                <td><p id="6">0</p></td>
+            </tr>
+
+            <tr>
+                    
+                <td><p id="7">0</p></td>
+            </tr>
+
+            <tr>
+                    
+                <td><p id="8">0</p></td>
+            </tr>
+
+            <tr>
+                    
+                <td><p id="9">0</p></td>
+            </tr>
+
+            <tr>
+                    
+                <td><p id="10">0</p></td>
+            </tr>
+        </table>
+
+
+        <script>
+            var x= new Date();
+            var diff= 0;
+            var n=1;
+            var number=n.toString();
+            var d = document.getElementById('yourDivId');
+            var e = document.getElementById('redbutton');
+            var xp=400;
+            var yp=400;
+            var xs=200;
+            var ys=200;
+            e.style.display="none";
+            d.style.position = "absolute";
+            d.style.left = xp+'px';
+            d.style.top = yp+'px';
+            
+
+        
+
+                
+            function gettime1(){
+                xp=200+Math.random()*300;
+                yp=100+Math.random()*200;
+                x= new Date();
+                d.style.position = "absolute";
+                d.style.left = xp+'px';
+                d.style.top = yp+'px';
+                e.style.display="block";
+                
+            }
+
+            function gettime2(){
+                var y= new Date();
+                diff=(y.getTime()-x.getTime())/1000;
+                e.style.display="none";
+    
+            }
+
+            function addcount(){
+                n=n+1;
+                number=n.toString()
+            }
+            
+            function givesize(temp){
+                e.style.height = temp+'px';
+                e.style.width = temp+'px';
+            }
+
+            function cleardata(){
+                n=1;
+                number=n.toString();
+                diff=0;
+                document.getElementById('1').innerHTML=diff;
+                document.getElementById('2').innerHTML=diff;
+                document.getElementById('3').innerHTML=diff;
+                document.getElementById('4').innerHTML=diff;
+                document.getElementById('5').innerHTML=diff;
+                document.getElementById('6').innerHTML=diff;
+                document.getElementById('7').innerHTML=diff;
+                document.getElementById('8').innerHTML=diff;
+                document.getElementById('9').innerHTML=diff;
+                document.getElementById('10').innerHTML=diff;
+            }
+        </script>
+        
+    </body>
+
+</html>
